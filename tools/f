@@ -1,0 +1,6 @@
+while (("$#")) ;do
+  [[ "$1" == -* ]] && break
+  _p="$_p $1" && shift
+done
+[[ "$_p" == "" ]] && _p=.
+find -L $_p -type f -not -path '*.git*' $* -printf '%CY%Cm%Cd-%CH:%CM %m %8u %9s %p\n'

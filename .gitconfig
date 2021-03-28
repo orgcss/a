@@ -1,0 +1,28 @@
+[alias]
+        d = diff --color-words
+        dn = diff --name-status
+        p = pull --all
+	b = branch
+        ba = for-each-ref --format='%(color:green)%(committerdate:iso8601) %(committerdate:relative) %(color:yellow)%(refname:short) %(color:cyan)%(authorname)' --sort committerdate
+	l = log --graph -n 30 --date=format-local:'%m%d %H:%M' --pretty=format:'%Cgreen%cd %Cred%h%Creset %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --abbrev-commit
+	ls = log --graph -n 10 --name-status --date=format-local:'%m%d %H:%M' --pretty=format:'%Cgreen%cd %Cred%h%Creset %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status
+	co = checkout
+	ci = commit
+	cia = commit --amend
+	s = show --color-words
+	la = log --graph -n 30 --date=format-local:'%m%d %H:%M' --pretty=format:'%Cgreen%cd %Cred%h%Creset %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --all
+	lsa = log --graph -n 10 --name-status --date=format-local:'%m%d %H:%M' --pretty=format:'%Cgreen%cd %Cred%h%Creset %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --all
+	f = fetch --all
+	pa = pull --all
+
+[credential]
+	helper = store
+[diff]
+	wordregex = [^[:space:]]
+[color "status"]
+	branch = yellow
+
+[user]
+	email = chenshangsong@hotmail.com
+	name = css

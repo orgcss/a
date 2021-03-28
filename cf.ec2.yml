@@ -1,0 +1,43 @@
+Description: ec2 launch
+Parameters:
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: cssceasar
+  Subnet:
+    Type: AWS::EC2::Subnet::Id
+    Default: subnet-98b115b3
+  VPC:
+    Type: AWS::EC2::VPC::Id
+    Default: vpc-5ce8f83b
+Resources:
+  EC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0bc8ae3ec8e338cbc
+      InstanceType: t3.small
+      KeyName:
+        Ref: KeyName
+      SubnetId:
+        Ref: Subnet
+      SecuritygroupIds:
+        - sg-0ca6b6344b1819a13
+      BlockDeviceMappings:
+        - DeviceName: "/dev/xvda"
+          Ebs:
+            VolumeSize: 8
+      UserData:
+        Fn::Base64:
+          Fn::Join:
+          - "\n"
+          - - '#!/bin/bash -xe'
+            - 'yum install -y git'
+            - 'git clone https://github.com/orgcss/a'
+            - 'cd a && bash userdata.sh'
+
+Outputs:
+  EC2ID:
+    Value: !Ref EC2
+  EC2IPpublic:
+    Value: !GetAtt 'EC2.PublicIp'
+  EC2IPprivate:
+    Value: !GetAtt 'EC2.PrivateIp'

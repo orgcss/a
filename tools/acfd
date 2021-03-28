@@ -1,0 +1,2 @@
+aws cloudformation update-termination-protection --no-enable-termination-protection --stack-name $1
+aws cloudformation delete-stack --stack-name $1
