@@ -1,0 +1,23 @@
+aws experiment: connecting private ec2 in two regions (tokyo and ue1)
+
+create peering connection:
+in target region:
+  default cidr overlapped:
+    delete default vpc in ue1: all subnets will be deleted as well.
+      delete instances, network interfaces, network gateways first
+    create your new vpc, specifing your prefered cidr: however, it can never be the default vpc.
+    create your subnets: no default subnets there because you don't have a default vpc.
+    create igw, attach to vpc.
+    create routtable, attach to vpc, route to igw.
+    update subnet public with internet routtable.
+
+in source region:
+  create peering connection.
+  accept from target region peering connection.
+  update routtable with the pcx.
+  update routtable in target region.
+  
+test:
+  in target region: create ec2 in private subnet.
+  in source region: login ec2, and ssh to target ec2 in target region.
+  
