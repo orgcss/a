@@ -1,4 +1,4 @@
-# scala hello world
+# scala hello world -- 20210526
 在ubuntu20.04 server上试了下scala的hello world.
 ## 环境准备
 在aws ec2里基于ubuntu20.04 server建一个ec2 instance，内存2G以上不然sbt可能跑不起来。
