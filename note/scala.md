@@ -20,7 +20,7 @@ scala>
 
 以上是所谓解释执行方式。要编译的话需要定义个object并定义main函数（见文末）。然后scalac hw.scala得到HW.class，再scala HW即可运行。注意虽然HW.class是标准的java class文件但是用java -cp . HW跑不起来，需要把scala.jar加入到classpath，因为object HW extends scala.AnyRef，可以用javap HW或scalap HW反编译查看。
 
-### 在geany中运行
+### 在geany中解释执行
 如果是在自己个人的ubuntu桌面平台也可以用geany来作为它的代码编辑器，我用它来即写代码也写日记。把以上的println("hw");存成hw.scala后，build菜单里添加Compile对应命令scala "%f"即可按F8运行。
 感觉运行速度比较慢。
 
