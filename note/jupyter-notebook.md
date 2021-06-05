@@ -24,3 +24,8 @@ table(a)
 as.data.frame(a)
 library()
 ```
+# R:devtools
+```
+sudo apt-get install libcurl4-openssl-dev libssl-dev libxml2-dev # install dependency
+R
+install.packages('devtools')
