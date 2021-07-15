@@ -21,3 +21,6 @@ rust是与c相竞争又相补充的语言，内存、线程安全，并发友好
 再编译，生成名为hw的可执行文件，大小3M多。.o文件消失。
 
 ### 运行：./hw，完成。
+
+# 2021715 rust reading notes
+rust明确定义了类似数据同时读写访问限制：owner传递; copy, referrence &; 可以有多个immutable referrence, 只能有一个mutable referrence, 这个mut &不能与那些immut &共存。
