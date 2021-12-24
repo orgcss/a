@@ -12,8 +12,8 @@ nn的backpropagation算法，是nn入门必修。以前写过，还成功过，�
         s.w2+=s.eta*out1.T@((target-out2)*(1-out2)*out2)
         s.w1+=s.eta*data.T@((target-out2)@s.w2.T*(1-out1)*out1) # 或用(target-out2)*out2*(1-out2)作为误差来传递
     def predict(s,data):
-      out1=data@s.w1
-      out2=out1@s.w2
+      out1=s.act(data@s.w1)
+      out2=s.act(out1@s.w2)
       return out1,out2
 ```
 关键有几处：
