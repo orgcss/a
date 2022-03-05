@@ -8,6 +8,8 @@
     mv tensorflow*.whl tensorflow-2.8.0-py3-none-any.whl
     pip install tensorflow*.whl
 ```
+400+MB whl file and 1.2G in package/tensorflow folder.
+
 ## tf example:
 ```python
 import tensorflow as tf
