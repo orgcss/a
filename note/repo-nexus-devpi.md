@@ -8,6 +8,27 @@ nexus安装很简单：下载、解压、启动。注意配置cache folder, prox
 
 访问：http://localhost:8081/nexus/， 用户admin/admin123
 
+注：
+- 直接启动：./nexus start
+- 注册systemd：sudo vim /etc/systemd/system/nexus.service
+```
+[Unit]
+Description=apache nexus
+After=network.target
+
+[Service]
+ExecStart=/media/data/app/nexus-2.15.1-02/bin/nexus start
+ExecStop=/media/data/app/nexus-2.15.1-02/bin/nexus stop
+User=css
+#ExecReload=/media/data/app/nexus-2.15.1-02/bin/nexus restart
+Restart=on-abort
+Type=forking
+TimeoutSec=600
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## devpi
 如果你的nexus是老版本不支持pypi, 那可以安装devpi。
 ```bash
