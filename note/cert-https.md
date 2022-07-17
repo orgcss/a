@@ -20,3 +20,4 @@ Two kinds of certs:
   - pathlen:0 means no sub CAs (it can only sign to end-user instead of intemediate CA).
 - end user certs has no "Basic Constraints" or has CA:**FALSE**
 - root-self-signed certs has CA:**TRUE**
+- certs for domain cannot be used for sub.domain, unless *.domain specifically
