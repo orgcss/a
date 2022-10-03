@@ -1,6 +1,8 @@
-# hello world cpp & asm
+# hello world cpp & asm & rust
 ## ubuntu
 apt install g++; apt install nasm
+
+curl https://sh.rustup.rs -sSf | sh; --.cargo, .rustup(1.1G,toolchain), .cargo/env
 ```cpp
 #include <stdio.h>
 int main(){
@@ -26,6 +28,11 @@ _start:
 section .data:
   msg: db "Hello world css!", 0xA
   msg_len equ $-msg
+```
+```
+fn main(){
+  println!("hw rust!");
+}
 ```
 - nasm -f elf
 - ld -m elf_i386
