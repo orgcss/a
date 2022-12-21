@@ -20,5 +20,6 @@ sudo curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/m
 ```
 ## run
 - minikube start
+- kubectl get po -A
 - docker images/ps
 - docker save xxx -o baseImage
